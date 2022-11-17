@@ -1,0 +1,17 @@
+﻿@model ActivityViewModel
+@{
+    ViewData["Title"] = "Activities";
+}
+
+<div class="row">
+    <div class="col-2">
+        @await Html.PartialAsync("_InputForm", new ActivityInput() {type = ""}) 
+    </div>
+
+    <div class="col-4">
+        @foreach(var act in Model.activities)
+        {
+            @await Html.PartialAsync(act.key == Model.selectedKeyValue? "_DisplayActivityDetail": "_DisplayActivityHidden", act)
+        }
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@model ActivityInput
+<form asp-action="AddActivity" method="post" class="form-horizontal" role="form">
+    <div class="form-group">
+        @Html.LabelFor(x => x.type, "Type")
+        <input asp-for="type" type="text" class="form-control" /> 
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.participants, "Number of Participants")
+        <input asp-for="participants" type="number" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.priceMin, "Price Range")
+        <input asp-for="priceMin" type="number" step="0.01" value="" class="form-control" />
+        <input asp-for="priceMax" type="number" step="0.01" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.accessibilityMin, "Accessibility Rating Range")
+        <input asp-for="accessibilityMin" type="number" step="0.01" value="" class="form-control" />
+        <input asp-for="accessibilityMax" type="number" step="0.01" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Add Activity"/>
+    </div>
+</form>

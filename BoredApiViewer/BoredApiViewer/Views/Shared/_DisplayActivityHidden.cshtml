@@ -1,0 +1,15 @@
+﻿@model BoredActivity
+<div class="card" data-id="@Model.key">
+    <div class="card-body">
+        <div class="card-header">
+            <h6>@Html.DisplayFor(x => x.activity)</h6>
+        </div>
+        <p class="card-text ToggleItems Hidden" id="body-@Model.key">
+            Type: @Model.type <br/>
+            Participants: @Model.participants <br />
+            Accessibility Rating: @Model.accessibility<br/>
+            Link: @Model.link<br/>
+            Relative Price: @Model.price<br/>
+        </p>
+    </div>
+</div>
